@@ -162,23 +162,20 @@ map <C-L> <C-W>l
 command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>"
 
 
-noremap <leader>ss :call StripWhitespace()<CR>
+noremap <leader>ss :StripWhitespace<CR>
+
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
-" Disable folding for Markdown plugin
-let g:vim_markdown_folding_disabled=1
 
 " set font
 set guifont=Menlo\ Regular:h14
 
-" open nerdree to current doc folder
-autocmd BufEnter * lcd %:p:h
 " compile gradle
 map <F4> :w<CR> :compiler gradle<CR> :make test<CR>:cw 4<CR>
+
 " This rewires n and N to do the highlighing...
 nnoremap <silent> n   n:call HLNext(0.4)<cr>
 nnoremap <silent> N   N:call HLNext(0.4)<cr>
-
 
 " highlight 81 chars (tip from Damian Conway)
 highlight ColorColumn ctermbg=magenta
