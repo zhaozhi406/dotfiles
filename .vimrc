@@ -4,7 +4,7 @@
 
 " ---------- VERY IMPORTANT -----------
 " To install plugin the first time:
-" > vim +BundleInstall +qall
+" > vim +PlugInstall +qall
 " -------------------------------------
 
 call plug#begin('~/.vim/plugged')
@@ -161,7 +161,6 @@ map <C-L> <C-W>l
 " Get output of shell commands
 command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>"
 
-
 noremap <leader>ss :StripWhitespace<CR>
 
 " Save a file as root (,W)
@@ -206,7 +205,7 @@ if has("spell") " if vim support spell checking
   set spellsuggest=10 " z= will show suggestions (10 at most)
   " spell checking for text, HTML, LaTeX, markdown and literate Haskell
   autocmd BufEnter *.txt,*.tex,*.html,*.md,*.ymd,*.lhs setlocal spell
-  autocmd BufEnter *.txt,*.tex,*.html,*.md,*.ymd,*.lhs setlocal spelllang=fr,en
+  autocmd BufEnter *.txt,*.tex,*.html,*.md,*.ymd,*.lhs setlocal spelllang=en,it
   " better error highlighting with solarized
   highlight clear SpellBad
   highlight SpellBad term=standout ctermfg=2 term=underline cterm=underline
